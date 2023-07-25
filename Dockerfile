@@ -1,9 +1,13 @@
 FROM node:19-alpine
 
-RUN mkdir -p /home/app
+WORKDIR /usr/src/app
 
-COPY . /home/app
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
 
 EXPOSE 3001
 
-CMD ["node", "/home/app/app.js"]
+CMD ["node", "app.js"]
