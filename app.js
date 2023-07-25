@@ -9,7 +9,7 @@ var bucket_slug = process.env.COSMIC_BUCKET || 'landing-page'
 app.get('/', function(req, res) {
   Cosmic.getObjects({ bucket: { slug: bucket_slug } }, function(err, response) {
     res.locals.cosmic = response;
-    res.render('index.html')
+    res.render('./views/index.html')
   })
 });
 //app.listen(app.get('port'))
