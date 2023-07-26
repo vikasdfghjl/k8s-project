@@ -7,7 +7,7 @@ pipeline {
 
     tools{
         dockerTool 'Docker'
-        nodejs 'Node-18-16-1'
+        nodejs 'Node-18.16.1'
      }
 
     stages{
@@ -28,13 +28,10 @@ pipeline {
                         def app = docker.build("vikasdfghjl/landing_page")
 
                         app.push("${BUILD_NUMBER}")
-}
+                        }
                 }
             }
-
-        }
-
-        
+        }        
 
     }
 
