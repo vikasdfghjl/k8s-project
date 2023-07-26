@@ -27,7 +27,7 @@ pipeline {
 
                         def app = docker.build("vikasdfghjl/landing_page")
 
-                        app.push("${BUILD_NUMBER}")
+                        app.push("latest")
                         }
                 }
             }
